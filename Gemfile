@@ -33,6 +33,8 @@ gem "stimulus-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
+# Add bcrypt for hashing password
+gem 'bcrypt'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
@@ -74,3 +76,4 @@ group :test do
   gem "selenium-webdriver"
   gem "nokogiri"
 end
+
