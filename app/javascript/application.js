@@ -7,7 +7,6 @@ import "jquery"
 import Rails from "@rails/ujs"
 import "jquery-ujs"
 import "@rails/ujs"
-
 const application = Application.start()
 const context = require.context("controllers", true, /\.js$/)
 application.load(definitionsFromContext(context))
