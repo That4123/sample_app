@@ -15,10 +15,9 @@ gem "sqlite3", "~> 1.4"
 gem 'sass-rails', '>= 6' 
 # Use bootstrap
 gem 'bootstrap-sass', '3.4.1'
+# gem 'bootstrap', '~> 5.0'
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
-# Use web packet
-gem 'webpacker', '~> 5.0'
 # Rails - controller - testing
 gem 'rails-controller-testing'
 
@@ -30,6 +29,8 @@ gem "turbo-rails"
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
+
+gem 'jquery-rails'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
