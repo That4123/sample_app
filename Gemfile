@@ -21,6 +21,8 @@ gem "puma", ">= 5.0"
 # Rails - controller - testing
 gem 'rails-controller-testing'
 
+gem 'faker', '3.4.1'
+
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
 
@@ -31,7 +33,9 @@ gem "turbo-rails"
 gem "stimulus-rails"
 
 gem 'jquery-rails'
-
+gem 'will_paginate', '~> 3.3'
+gem 'bootstrap-will_paginate', '1.0.0'
+# gem 'webpacker'
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 # Add bcrypt for hashing password
