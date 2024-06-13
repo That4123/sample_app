@@ -1,6 +1,9 @@
 source "https://rubygems.org"
 
 ruby "3.2.3"
+gem 'active_storage_validations'
+gem 'image_processing'
+gem 'mini_magick'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3", ">= 7.1.3.3"
@@ -75,7 +78,9 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
-
+group :production do
+  gem 'aws-sdk-s3', require: false
+end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
