@@ -2,9 +2,9 @@ source "https://rubygems.org"
 
 ruby "3.2.3"
 gem 'active_storage_validations'
-gem 'image_processing'
+# gem 'image_processing'
 gem 'mini_magick'
-
+gem 'ruby-vips'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3", ">= 7.1.3.3"
 
@@ -35,7 +35,7 @@ gem "turbo-rails"
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
-gem 'jquery-rails'
+# gem 'jquery-rails'
 gem 'will_paginate', '~> 3.3'
 gem 'bootstrap-will_paginate', '1.0.0'
 # gem 'webpacker'
@@ -60,7 +60,7 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.2"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
