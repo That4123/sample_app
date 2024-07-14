@@ -13,7 +13,7 @@ class PasswordResetsController < ApplicationController
       redirect_to root_url
     else
       flash.now[:danger] = "Email address not found"
-      render 'new'
+      render 'new', status: 422
     end
   end
   def edit
@@ -29,7 +29,7 @@ class PasswordResetsController < ApplicationController
       flash[:success] = "Password has been reset."
       redirect_to @user
     else
-      render 'edit'
+      render 'edit', status: 422
     end
   end
 

@@ -36,7 +36,7 @@ class UsersController < ApplicationController
       flash[:success] = "Your changes were successfully saved"
       redirect_to @user
     else
-      render 'edit'
+      render 'edit', status: 422
     end
   end
   def destroy
