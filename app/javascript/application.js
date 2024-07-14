@@ -2,10 +2,11 @@
 import "controllers"
 import "@hotwired/turbo-rails"
 import { Application } from "@hotwired/stimulus"
-
+// import { Turbo } from "@hotwired/turbo-rails"
 
 // import Rails from "@rails/ujs"
 Application.start()
+
 // Rails.start()
 // import "jquery"
 // import "jquery-ujs"

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
   get 'users/new'
   root "static_pages#home"
+  get 'static_pages/home', to: 'static_pages#home', as: 'static_pages'
   get '/help', to: 'static_pages#help'
   get '/about', to: 'static_pages#about'
   get '/signup',to: 'users#new'

@@ -1,0 +1,82 @@
+17 - 7 - 2024
+The Rails router recognizes URLs and dispatches them to a controller's action, or to a Rack application. 
+It can also generate paths and URLs, avoiding the need to hardcode strings in your views.
+
+get '/patients/:id', to: 'patients#show'
+Rails uses snake_case for controller names here in the rails routing
+A single call to resources can declare all of the necessary routes for your index, show, new, edit, create, update, and destroy actions.
+get 'profile', to: 'users#show' 
+OR
+get 'profile', action: :show, controller: 'users'
+
+resource :geocoder ------> do not declare method index -
+resolve('Geocoder') { [:geocoder] } ---> to translate form_with(mode @geocoder) In short, you can just pass the model instance and have Rails figure out model name and the rest (route)--- url: article_path(@article)
+ ---------
+resource :geocoder and resource :geocoders -> create both sigular and plural route to the same controller
+
+
+
+Most commonly, you might group a number of administrative controllers under an Admin:: namespace, and place these controllers under the app/controllers/admin directory
+
+namespace :admin do
+  resources :articles, :comments
+end 
+
+skip routing prefix /admin
+scope module: 'admin' do
+  resources :articles, :comments
+end
+
+resources :articles, module: 'admin'
+ 
+-----------------------------
+
+scope '/admin' do
+  resources :articles, :comments
+end
+OR
+resources :articles, path: '/admin/articles'
+will add /amin in path
+
+-------------------------------
+Nested resources
+resources :magazines do
+  resources :ads
+end
+/magazines/:magazine_id/ads
+Resources should never be nested more than 1 level deep.
+**Shallow nested ->  
+resources :articles do
+  resources :comments, only: [:index, :new, :create]
+end
+resources :comments, only: [:show, :edit, :update, :destroy]
+
+and you can replace form_with 
+resources :articles do
+  resources :comments, shallow: true
+end
+ORRRRRR
+resources :articles, shallow: true do
+  resources :comments
+  resources :quotes
+  resources :drafts
+end
+ORRRRRR
+shallow do
+  resources :articles do
+    resources :comments
+    resources :quotes
+    resources :drafts
+  end
+end
+**Routing Concern
+Routing concerns allow you to declare common routes that can be reused inside other resources and routes. To define a concern, use a concern block:
+These concerns can be used in resources to avoid code duplication and share behavior across routes
+concern :commentable do
+  resources :comments
+end
+using that define
+
+resources :messages, concerns: :commentable
+
+resources :articles, concerns: [:commentable, :image_attachable]
